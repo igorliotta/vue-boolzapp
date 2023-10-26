@@ -116,6 +116,30 @@ ul, ol, li {
     flex-grow: 1;
 }
 
+.search-chats {
+    background-color: #EBE9EB;
+    height: 27px;
+    padding: 4px 2px;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.search-chats > input {
+    width: 85%;
+    font-size: 11px;
+}
+
+.search-chats > button {
+    width: 15%;
+    font-size: 11px;
+}
+
+input::placeholder {
+    font-weight: bold;
+    font-size: 9px;
+
+}
+
 .user-setting {
     border: 1px solid blue;
     height: 40px;
