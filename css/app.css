@@ -40,4 +40,52 @@ ul, ol, li {
     height: 650px;
     border: 2px solid red;
     margin-top: -85px;
+    display: flex;
 }
+
+.left-content {
+    width: 200px;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content {
+    border: 1px solid yellow;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-setting {
+    border: 1px solid blue;
+    height: 40px;
+}
+
+.notification-alert {
+    border: 1px solid blue;
+    height: 40px;
+}
+
+.chats {
+    border: 1px solid blue;
+    flex-grow: 1;
+}
+
+.user-setting {
+    border: 1px solid blue;
+    height: 40px;
+}
+
+.conversation {
+    border: 1px solid blue;
+    flex-grow: 1;
+}
+
+.send-message {
+    border: 1px solid blue;
+    height: 40px;
+}
+
