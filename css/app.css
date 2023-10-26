@@ -51,7 +51,6 @@ ul, ol, li {
 }
 
 .right-content {
-    border: 1px solid yellow;
     height: 100%;
     flex-grow: 1;
     display: flex;
@@ -80,6 +79,7 @@ ul, ol, li {
 
 .my-setting-name {
     font-size: 15px;
+    font-weight: bold;
 }
 
 .ellipsis-vertical {
@@ -111,7 +111,6 @@ ul, ol, li {
 }
 
 .chats {
-    border: 1px solid blue;
     flex-grow: 1;
     background-color: white;
 }
@@ -172,8 +171,39 @@ input::placeholder {
 }
 
 .user-setting {
-    border: 1px solid blue;
     height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background-color: #EBE9EB;
+    border-left: 1px solid lightgrey;
+}
+
+.user-setting-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-setting-right {
+    font-size: 12px;
+    opacity: 0.3;
+    display: flex;
+    gap: 8px;
+}
+
+.user-setting-img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.user-setting-text {
+    font-size: 10px;
+}
+
+.user-setting-name {
+    font-weight: bold;
 }
 
 .conversation {
