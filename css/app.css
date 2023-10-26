@@ -231,3 +231,40 @@ input::placeholder {
     height: 40px;
 }
 
+.message-container {
+    padding: 20px 4px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sented-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sented-message {
+    height: 30px;
+    line-height: 27px;
+    vertical-align: center;
+    border-radius: 5px;
+    background-color: #D7F9BC;
+    text-align: end;
+    font-size: 11px;
+    padding: 2px 4px;
+}
+
+.received-message {
+    height: 30px;
+    line-height: 27px;
+    vertical-align: center;
+    border-radius: 5px;
+    background-color: white;
+    text-align: start;
+    font-size: 11px;
+    padding: 2px 4px;
+    align-self: self-end;
+    /* margin-top: 50px; */
+}
+
