@@ -46,7 +46,6 @@ ul, ol, li {
 .left-content {
     width: 200px;
     height: 100%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -114,13 +113,14 @@ ul, ol, li {
 .chats {
     border: 1px solid blue;
     flex-grow: 1;
+    background-color: white;
 }
 
 .search-chats {
     background-color: #EBE9EB;
     height: 27px;
     padding: 4px 2px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid lightgray;
     display: flex;
 }
 
@@ -138,6 +138,37 @@ input::placeholder {
     font-weight: bold;
     font-size: 9px;
 
+}
+
+.chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+    padding: 4px 2px;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+.chat-img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.chat-info {
+    font-size: 10px;
+}
+
+.chat-name {
+    font-weight: bold;
+}
+
+.chat-time {
+    font-size: 8px;
+    position: absolute;
+    right: 2px;
+    top: 4px;
 }
 
 .user-setting {
