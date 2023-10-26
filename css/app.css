@@ -38,7 +38,6 @@ ul, ol, li {
 .app-content {
     width: 570px;
     height: 650px;
-    border: 2px solid red;
     margin-top: -85px;
     display: flex;
 }
@@ -227,8 +226,24 @@ input::placeholder {
 }
 
 .send-message {
-    border: 1px solid blue;
     height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 0 15px;
+    background-color: #EBE9EB;
+}
+.sending {
+    flex-grow: 1;
+}
+
+.sending > input {
+    width: 100%;
+}
+
+.sending > input::placeholder {
+    opacity: 0.4;
 }
 
 .message-container {
@@ -242,6 +257,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    padding: 0 10px;
 }
 
 .sented-message {
