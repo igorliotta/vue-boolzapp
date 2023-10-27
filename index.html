@@ -1,186 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/app.css">
-    <script src="https://kit.fontawesome.com/aa4f9fed4f.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script
+      src="https://kit.fontawesome.com/aa4f9fed4f.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Boolzapp</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-
-        <div class="page-container">
-            <div class="page-container-bg-up"></div>
-            <div class="page-container-bg-down">
-                <div class="app-content">
-                    <div class="left-content">
-                        <div class="my-setting">
-                            <div class="my-setting-left">
-                                <img class="my-setting-img" src="./img/avatar_1.jpg" alt="">
-                                <span class="my-setting-name">{{ userName }}</span>
-                            </div>
-                            <div class="my-setting-right">
-                                <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical ellipsis-vertical"></i>
-                            </div>
-                        </div>
-                        <div class="notification-alert">
-                            <div class="notification-alert-icon">
-                                <i class="fa-solid fa-bell-slash"></i>
-                            </div>
-                            <div class="notification-alert-text">
-                                <strong>Ricevi notifiche di nuovi messaggi</strong>
-                                <p>Attiva notifiche desktop</p>
-                            </div>
-                        </div>
-                        <div class="chats">
-                           <div class="search-chats">
-                            <button>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                            <input type="text" placeholder="  Cerca o inizia una nuova chat">
-                           </div>
-                           <div class="chats-item">
-                            <ul class="list-chat">
-                                <li class="chat"
-                                v-for="(contact,index) in contacts"
-                                :key="index"
-                                :class="{
-                                    'active': index === currentIndex
-                                }">
-                                   <div class="chat-left">
-                                    <img class="chat-img" :src="contact.avatar" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">{{ contact.name }}</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                   </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <!-- <li class="chat">
-                                   <div class="chat-left">
-                                    <img class="chat-img" src="./img/avatar_2.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Fabio</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                    <span class="chat-time">12:00</span>
-                                   </div>
-                                </li>
-                                <li class="chat">
-                                   <div class="chat-left">
-                                    <img class="chat-img" src="./img/avatar_3.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Samuele</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                   </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <li class="chat">
-                                   <div class="chat-left">
-                                    <img class="chat-img" src="./img/avatar_4.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Alessandro B.</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                   </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <li class="chat">
-                                    <div class="chat-left">
-                                        <img class="chat-img" src="./img/avatar_5.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Alessandro L.</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                    </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <li class="chat">
-                                    <div class="chat-left">
-                                        <img class="chat-img" src="./img/avatar_6.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Claudia</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                    </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <li class="chat">
-                                    <div class="chat-left">
-                                        <img class="chat-img" src="./img/avatar_7.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Federico</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                    </div>
-                                    <span class="chat-time">12:00</span>
-                                </li>
-                                <li class="chat">
-                                    <div class="chat-left">
-                                        <img class="chat-img" src="./img/avatar_8.jpg" alt="">
-                                    <div class="chat-info">
-                                      <span class="chat-name">Davide</span>
-                                      <p class="chat-text">Ultimo messaggio inviato</p>
-                                    </div>
-                                    </div>
-                                    <span class="chat-time">12:00</span>
-                                </li> -->
-                            </ul>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="right-content">
-                        <div class="user-setting">
-                            
-                               <div class="user-setting-left">
-                                <img class="user-setting-img" :src="contacts[currentIndex].avatar" alt="">
-                                <div class="user-setting-text">
-                                  <span class="user-setting-name">{{ contacts[currentIndex].name }}</span>
-                                  <p class="user-setting-parag">Ultimo messaggio inviato alle 12:00</p>
-                                </div>
-                               </div>
-                                <div class="user-setting-right">
-                                    <i class="fa-solid fa-circle-notch"></i>
-                                    <i class="fa-solid fa-message"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </div>
-                            
-                        </div>
-                        <ul class="conversation">
-                            <li class="message sent">
-                                Messaggio che invio
-                            </liv>
-                            <li class="message sent">
-                                Messaggio che invio
-                            </li>
-                            <li class="message received">
-                                Messaggio che ricevo
-                            </li>
-                        </ul>
-
-                         <div class="send-message">
-                            <div>
-                                <i class="fa-regular fa-face-smile"></i>
-                            </div>
-                            <div class="sending">
-                                <input type="text" placeholder="  Scrivi un messaggio">
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
-                        </div>
-                    </div>
+      <div class="page-container">
+        <div class="page-container-bg-up"></div>
+        <div class="page-container-bg-down">
+          <div class="app-content">
+            <div class="left-content">
+              <div class="my-setting">
+                <div class="my-setting-left">
+                  <img class="my-setting-img" src="./img/avatar_1.jpg" alt="" />
+                  <span class="my-setting-name">{{ userName }}</span>
                 </div>
+                <div class="my-setting-right">
+                  <i class="fa-solid fa-circle-notch"></i>
+                  <i class="fa-solid fa-message"></i>
+                  <i
+                    class="fa-solid fa-ellipsis-vertical ellipsis-vertical"
+                  ></i>
+                </div>
+              </div>
+              <div class="notification-alert">
+                <div class="notification-alert-icon">
+                  <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="notification-alert-text">
+                  <strong>Ricevi notifiche di nuovi messaggi</strong>
+                  <p>Attiva notifiche desktop</p>
+                </div>
+              </div>
+              <div class="chats">
+                <div class="search-chats">
+                  <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="  Cerca o inizia una nuova chat"
+                  />
+                </div>
+                <div class="chats-item">
+                  <ul class="list-chat">
+                    <li
+                      class="chat"
+                      v-for="(contact,index) in contacts"
+                      :key="index"
+                      :class="{
+                                    'active': index === currentIndex
+                                }"
+                      @click="switchChat(index)">
+                      <div class="chat-left">
+                        <img class="chat-img" :src="contact.avatar" alt="" />
+                        <div class="chat-info">
+                          <span class="chat-name">{{ contact.name }}</span>
+                          <p class="chat-text">Ultimo messaggio inviato</p>
+                        </div>
+                      </div>
+                      <span class="chat-time">12:00</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <div class="right-content">
+              <div class="user-setting">
+                <div class="user-setting-left">
+                  <img
+                    class="user-setting-img"
+                    :src="contacts[currentIndex].avatar"
+                    alt=""
+                  />
+                  <div class="user-setting-text">
+                    <span class="user-setting-name"
+                      >{{ contacts[currentIndex].name }}</span
+                    >
+                    <p class="user-setting-parag">
+                      Ultimo messaggio inviato alle 12:00
+                    </p>
+                  </div>
+                </div>
+                <div class="user-setting-right">
+                  <i class="fa-solid fa-circle-notch"></i>
+                  <i class="fa-solid fa-message"></i>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+              </div>
+              <ul class="conversation">
+                <li class="message" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+                v-for="(message, index) in contacts[currentIndex].messages">
+                    {{ message.message }}
+                </li>
+              </ul>
+
+              <div class="send-message">
+                <div>
+                  <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div class="sending">
+                  <input type="text" placeholder="  Scrivi un messaggio" />
+                </div>
+                <div>
+                  <i class="fa-solid fa-microphone"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>

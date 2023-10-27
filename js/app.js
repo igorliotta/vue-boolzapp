@@ -170,6 +170,11 @@ const { createApp } = Vue
         ]
        }
     },
+    methods: {
+        switchChat(chatIndex) {
+            this.currentIndex = chatIndex;
+        }
+    },
     mounted() {
         console.log("VUE OK");
     }
