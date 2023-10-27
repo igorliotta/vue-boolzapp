@@ -5,6 +5,7 @@ const { createApp } = Vue
       return {
         userName: 'Igor',
         currentIndex: 0,
+        newMessageText: '',
         contacts: [
             {
                 name: 'Michele',
@@ -173,6 +174,23 @@ const { createApp } = Vue
     methods: {
         switchChat(chatIndex) {
             this.currentIndex = chatIndex;
+        },
+        addMessage() {
+
+            const index = this.currentIndex;
+            const text = this.newMessageText;
+
+            if (text !== '') {
+                const newMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: text,
+                    status: 'sent'
+                }
+    
+                this.contacts[index].messages.push(newMessage);
+            } 
+
+            this.newMessageText= ''
         }
     },
     mounted() {
