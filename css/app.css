@@ -15,6 +15,7 @@ ul, ol, li {
 .page-container {
     width: 1200px;
     height: 100vh;
+    overflow: hidden;
     margin: 0 auto;
     padding: 50px 0;
     display: flex;
@@ -36,14 +37,14 @@ ul, ol, li {
 }
 
 .app-content {
-    width: 570px;
+    width: 800px;
     height: 650px;
     margin-top: -85px;
     display: flex;
 }
 
 .left-content {
-    width: 200px;
+    width: 250px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -69,6 +70,13 @@ ul, ol, li {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.my-setting-right {
+    display: flex;
+    font-size: 12px;
+    opacity: 0.3;
+    gap: 8px;
 }
 
 .my-setting-img {
@@ -126,11 +134,14 @@ ul, ol, li {
 .search-chats > input {
     width: 85%;
     font-size: 11px;
+    border: none;
+    border-radius: 4px;
 }
 
 .search-chats > button {
     width: 15%;
     font-size: 11px;
+    border: none;
 }
 
 input::placeholder {
@@ -145,7 +156,7 @@ input::placeholder {
     align-items: center;
     gap: 7px;
     position: relative;
-    padding: 4px 2px;
+    padding: 13px 2px;
     background-color: white;
     border-bottom: 1px solid lightgrey;
 }
@@ -153,6 +164,7 @@ input::placeholder {
 .chat-left {
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .chat-img {
@@ -220,9 +232,18 @@ input::placeholder {
     color: gray;
 }
 
+.right-content {
+    display: flex;
+    flex-direction: column;
+}
+
 .conversation {
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
 }
 
 .send-message {
@@ -230,7 +251,7 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
     padding: 0 15px;
     background-color: #EBE9EB;
 }
@@ -240,17 +261,13 @@ input::placeholder {
 
 .sending > input {
     width: 100%;
+    line-height: 25px;
+    border: none;
+    border-radius: 4px;
 }
 
 .sending > input::placeholder {
     opacity: 0.4;
-}
-
-.message-container {
-    padding: 20px 4px;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .sented-messages {
@@ -260,27 +277,20 @@ input::placeholder {
     padding: 0 10px;
 }
 
-.sented-message {
-    height: 30px;
-    line-height: 27px;
-    vertical-align: center;
-    border-radius: 5px;
-    background-color: #D7F9BC;
-    text-align: end;
-    font-size: 11px;
-    padding: 2px 4px;
+.message {
+    max-width: 80%;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 12px;
 }
 
-.received-message {
-    height: 30px;
-    line-height: 27px;
-    vertical-align: center;
-    border-radius: 5px;
+.message.sent {
+    background-color: #D7F9BC;
+    align-self: flex-end;
+}
+
+.message.received {
     background-color: white;
-    text-align: start;
-    font-size: 11px;
-    padding: 2px 4px;
-    align-self: self-end;
-    /* margin-top: 50px; */
+    align-self: flex-start;
 }
 
