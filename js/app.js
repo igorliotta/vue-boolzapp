@@ -193,13 +193,15 @@ const { createApp } = Vue
             } 
 
             this.newMessageText= ''
+
+            this.autoAnswer();
         },
         addAnswerMessage() {
 
             const index = this.currentIndex;
-            const answerText = this.newAnswerMessageText;
+            const answerText = 'OK!!!';
 
-            if (text !== '') {
+             
                 const newAnswerMessage = {
                     date: '10/01/2020 15:30:55',
                     message: answerText,
@@ -207,15 +209,15 @@ const { createApp } = Vue
                 }
     
                 this.contacts[index].messages.push(newAnswerMessage);
-            } 
+            
 
             this.newAnswerMessageText= ''
         },
-        // autoAnswer() {
-        //     this.intervalId = setInterval(() => {
-        //         this.getAnswerMessage();
-        //     }, 1000)
-        // },
+        autoAnswer() {
+            setTimeout(() => {
+                this.addAnswerMessage();
+            }, 1000)
+        },
     },
     mounted() {
         console.log("VUE OK");
