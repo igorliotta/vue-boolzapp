@@ -161,6 +161,10 @@ input::placeholder {
     border-bottom: 1px solid lightgrey;
 }
 
+.chat.active {
+    background-color: lightgray;
+}
+
 .chat-left {
     display: flex;
     align-items: center;

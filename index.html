@@ -19,7 +19,7 @@
                         <div class="my-setting">
                             <div class="my-setting-left">
                                 <img class="my-setting-img" src="./img/avatar_1.jpg" alt="">
-                                <span class="my-setting-name">Sofia</span>
+                                <span class="my-setting-name">{{ userName }}</span>
                             </div>
                             <div class="my-setting-right">
                                 <i class="fa-solid fa-circle-notch"></i>
@@ -45,17 +45,22 @@
                            </div>
                            <div class="chats-item">
                             <ul class="list-chat">
-                                <li class="chat">
+                                <li class="chat"
+                                v-for="(contact,index) in contacts"
+                                :key="index"
+                                :class="{
+                                    'active': index === currentIndex
+                                }">
                                    <div class="chat-left">
-                                    <img class="chat-img" src="./img/avatar_1.jpg" alt="">
+                                    <img class="chat-img" :src="contact.avatar" alt="">
                                     <div class="chat-info">
-                                      <span class="chat-name">Michele</span>
+                                      <span class="chat-name">{{ contact.name }}</span>
                                       <p class="chat-text">Ultimo messaggio inviato</p>
                                     </div>
                                    </div>
                                     <span class="chat-time">12:00</span>
                                 </li>
-                                <li class="chat">
+                                <!-- <li class="chat">
                                    <div class="chat-left">
                                     <img class="chat-img" src="./img/avatar_2.jpg" alt="">
                                     <div class="chat-info">
@@ -124,7 +129,7 @@
                                     </div>
                                     </div>
                                     <span class="chat-time">12:00</span>
-                                </li>
+                                </li> -->
                             </ul>
                            </div>
                         </div>
@@ -133,9 +138,9 @@
                         <div class="user-setting">
                             
                                <div class="user-setting-left">
-                                <img class="user-setting-img" src="./img/avatar_1.jpg" alt="">
+                                <img class="user-setting-img" :src="contacts[currentIndex].avatar" alt="">
                                 <div class="user-setting-text">
-                                  <span class="user-setting-name">Michele</span>
+                                  <span class="user-setting-name">{{ contacts[currentIndex].name }}</span>
                                   <p class="user-setting-parag">Ultimo messaggio inviato alle 12:00</p>
                                 </div>
                                </div>
