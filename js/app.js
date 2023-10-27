@@ -3,9 +3,11 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        intervalId: null,
         userName: 'Igor',
         currentIndex: 0,
         newMessageText: '',
+        answerMessageText: 'OK!!!',
         contacts: [
             {
                 name: 'Michele',
@@ -191,9 +193,33 @@ const { createApp } = Vue
             } 
 
             this.newMessageText= ''
-        }
+        },
+        addAnswerMessage() {
+
+            const index = this.currentIndex;
+            const answerText = this.newAnswerMessageText;
+
+            if (text !== '') {
+                const newAnswerMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: answerText,
+                    status: 'received'
+                }
+    
+                this.contacts[index].messages.push(newAnswerMessage);
+            } 
+
+            this.newAnswerMessageText= ''
+        },
+        // autoAnswer() {
+        //     this.intervalId = setInterval(() => {
+        //         this.getAnswerMessage();
+        //     }, 1000)
+        // },
     },
     mounted() {
         console.log("VUE OK");
     }
   }).mount('#app')
+
+  
