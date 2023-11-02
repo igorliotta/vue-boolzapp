@@ -42,11 +42,12 @@
               </div>
               <div class="chats">
                 <div class="search-chats">
-                  <button>
+                  <button @click="searchName">
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                   <input
                     type="text"
+                    v-model="searchedName"
                     placeholder="  Cerca o inizia una nuova chat"
                   />
                 </div>
@@ -59,7 +60,9 @@
                       :class="{
                                     'active': index === currentIndex
                                 }"
-                      @click="switchChat(index)">
+                      @click="switchChat(index)"
+                      v-show="contact.name.toLowerCase().includes(searchedName.toLowerCase())"
+                    >
                       <div class="chat-left">
                         <img class="chat-img" :src="contact.avatar" alt="" />
                         <div class="chat-info">
@@ -97,9 +100,12 @@
                 </div>
               </div>
               <ul class="conversation">
-                <li class="message" :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
-                v-for="(message, index) in contacts[currentIndex].messages">
-                    {{ message.message }}
+                <li
+                  class="message"
+                  :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+                  v-for="(message, index) in contacts[currentIndex].messages"
+                >
+                  {{ message.message }}
                 </li>
               </ul>
 
@@ -108,9 +114,8 @@
                   <i class="fa-regular fa-face-smile"></i>
                 </div>
                 <div class="sending">
-                  <input type="text" placeholder="  Scrivi un messaggio" /
-                  @keyup.enter="addMessage"
-                  v-model="newMessageText" >
+                  <input type="text" placeholder=" Scrivi un messaggio" /
+                  @keyup.enter="addMessage" v-model="newMessageText" >
                 </div>
                 <div>
                   <i class="fa-solid fa-microphone"></i>
